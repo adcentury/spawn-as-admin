@@ -62,7 +62,7 @@ ChildProcess StartChildProcess(const std::string& command, const std::vector<std
   shell_execute_info->lpVerb = test_mode ? "open" : "runas";
   shell_execute_info->lpFile = command.c_str();
   shell_execute_info->lpParameters = parameters.c_str();
-  shell_execute_info->nShow = SW_NORMAL;
+  shell_execute_info->nShow = SW_HIDE;
 
   if (::ShellExecuteEx(shell_execute_info) == FALSE || shell_execute_info->hProcess == NULL) {
     return {nullptr, -1, -1, -1};
