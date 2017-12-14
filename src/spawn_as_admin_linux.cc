@@ -2,7 +2,7 @@
 
 namespace spawn_as_admin {
 
-ChildProcess StartChildProcess(const std::string& command, const std::vector<std::string>& args, bool test_mode) {
+ChildProcess StartChildProcess(const std::string& command, const std::vector<std::string>& args, bool test_mode, bool hide_window) {
   return {nullptr, -1, -1, -1};
 }
 

@@ -50,7 +50,7 @@ ChildProcess StartChildProcessWithoutPrivileges(const string &command, vector<ch
   }
 }
 
-ChildProcess StartChildProcess(const string& command, const vector<string>& args, bool test_mode) {
+ChildProcess StartChildProcess(const string& command, const vector<string>& args, bool test_mode, bool hide_window) {
   vector<char *> argv;
   argv.reserve(args.size());
   for (const string &arg : args) {

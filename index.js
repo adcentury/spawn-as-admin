@@ -55,7 +55,7 @@ module.exports = function spawnAsAdmin (command, args = [], options = {}) {
 
   const spawnResult = binding.spawnAsAdmin(command, args, (exitCode) => {
     result.emit('exit', exitCode)
-  }, options && options.testMode)
+  }, options && options.testMode, options && options.hideWindow)
 
   if (!spawnResult) {
     throw new Error(`Failed to obtain root priveleges to run ${command}`)

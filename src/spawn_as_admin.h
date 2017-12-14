@@ -13,7 +13,7 @@ struct ChildProcess {
   int stdout_file_descriptor;
 };
 
-ChildProcess StartChildProcess(const std::string &command, const std::vector<std::string> &args, bool test_mode);
+ChildProcess StartChildProcess(const std::string &command, const std::vector<std::string> &args, bool test_mode, bool hide_window);
 
 int WaitForChildProcessToExit(ChildProcess *, bool test_mode);
 

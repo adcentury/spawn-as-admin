@@ -61,7 +61,10 @@ void SpawnAsAdmin(const Nan::FunctionCallbackInfo<Value>& info) {
   bool test_mode = false;
   if (info[3]->IsTrue()) test_mode = true;
 
-  ChildProcess child_process = spawn_as_admin::StartChildProcess(command, args, test_mode);
+  bool hide_window = false;
+  if (info[4]->IsTrue()) hide_window = true;
+
+  ChildProcess child_process = spawn_as_admin::StartChildProcess(command, args, test_mode, hide_window);
   if (child_process.pid == -1) return;
 
   Local<Object> result = Nan::New<Object>();
